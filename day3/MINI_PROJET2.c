@@ -165,7 +165,7 @@ void modifierContact() {
             if (fgets(contact[index].email, sizeof(contact[index].email), stdin) == NULL) continue;
             contact[index].email[strcspn(contact[index].email, "\n")] = '\0';
 
-            if (validerEmail(contact[index].email)==0) {
+            if (!validerEmail(contact[index].email)) {
                 printf("Adresse email invalide. Veuillez reessayer.\n");
             }
         } while (validerEmail(contact[index].email)==0);
@@ -270,3 +270,4 @@ void main(){
         }
     } while(choix != 0);
 }
+
